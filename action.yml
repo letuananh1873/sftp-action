@@ -1,0 +1,48 @@
+name: 'SFTP uploader'
+author: 'David Lee'
+branding:
+  color: 'green'
+  icon: 'upload'
+description: 'upload files to server via SFTP'
+inputs:
+  host:
+    required: true
+  port:
+    required: false
+    default: 22
+  username:
+    required: false
+    default: 'root'
+  password:
+    required: true
+  compress:
+    required: false
+    default: false
+  localDir:
+    required: true
+  remoteDir:
+    required: true
+  dryRun:
+    required: false
+    default: false
+  privateKey:
+    required: false
+    default: ''
+  passphrase:
+    required: false
+    default: ''
+  agent:
+    required: false
+    default: ''
+  exclude:
+    required: false
+    default: ''
+  forceUpload:
+    required: false
+    default: false
+  removeExtraFilesOnServer:
+    required: false
+    default: false
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
